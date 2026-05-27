@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ВыбратьВыполнить" id="1">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ВыбратьВыполнить</CommandName>
+				<ExtendedTooltip name="ВыбратьВыполнитьРасширеннаяПодсказка" id="2"/>
+			</Button>
+			<Button name="ФормаОтменаВыполнить" id="3">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОтменаВыполнить</CommandName>
+				<ExtendedTooltip name="ФормаОтменаВыполнитьРасширеннаяПодсказка" id="4"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<InputField name="СтрокаПоиска" id="11">
+			<DataPath>СтрокаПоиска</DataPath>
+			<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+			<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="СтрокаПоискаРасширеннаяПодсказка" id="13"/>
+			<Events>
+				<Event name="OnChange">СтрокаПоискаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<Table name="ДеревоПодсистем" id="14">
+			<Representation>Tree</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>ДеревоПодсистем</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Add</ExcludedCommand>
+				<ExcludedCommand>Change</ExcludedCommand>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+			</CommandSet>
+			<ContextMenu name="ДеревоПодсистемКонтекстноеМеню" id="15"/>
+			<AutoCommandBar name="ДеревоПодсистемКоманднаяПанель" id="16">
+				<ChildItems>
+					<ButtonGroup name="ФормаГруппа1" id="5">
+						<Representation>Compact</Representation>
+						<ExtendedTooltip name="ФормаГруппа1РасширеннаяПодсказка" id="6"/>
+						<ChildItems>
+							<Button name="ДеревоПодсистемРазвернутьВсё" id="36">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.РазвернутьВсё</CommandName>
+								<Picture>
+									<xr:Ref>StdPicture.ExpandAll</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<ExtendedTooltip name="ДеревоПодсистемРазвернутьВсёРасширеннаяПодсказка" id="37"/>
+							</Button>
+							<Button name="ДеревоПодсистемСвернутьВсё" id="38">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.СвернутьВсё</CommandName>
+								<Picture>
+									<xr:Ref>StdPicture.CollapseAll</xr:Ref>
+									<xr:LoadTransparent>true</xr:LoadTransparent>
+								</Picture>
+								<ExtendedTooltip name="ДеревоПодсистемСвернутьВсёРасширеннаяПодсказка" id="39"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+				</ChildItems>
+			</AutoCommandBar>
+			<ExtendedTooltip name="ДеревоПодсистемРасширеннаяПодсказка" id="17"/>
+			<SearchStringAddition name="ДеревоПодсистемСтрокаПоиска" id="18">
+				<AdditionSource>
+					<Item>ДеревоПодсистем</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоПодсистемСтрокаПоискаКонтекстноеМеню" id="19"/>
+				<ExtendedTooltip name="ДеревоПодсистемСтрокаПоискаРасширеннаяПодсказка" id="20"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ДеревоПодсистемСостояниеПросмотра" id="21">
+				<AdditionSource>
+					<Item>ДеревоПодсистем</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоПодсистемСостояниеПросмотраКонтекстноеМеню" id="22"/>
+				<ExtendedTooltip name="ДеревоПодсистемСостояниеПросмотраРасширеннаяПодсказка" id="23"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ДеревоПодсистемУправлениеПоиском" id="24">
+				<AdditionSource>
+					<Item>ДеревоПодсистем</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ДеревоПодсистемУправлениеПоискомКонтекстноеМеню" id="25"/>
+				<ExtendedTooltip name="ДеревоПодсистемУправлениеПоискомРасширеннаяПодсказка" id="26"/>
+			</SearchControlAddition>
+			<Events>
+				<Event name="Selection">ДеревоПодсистемВыбор</Event>
+			</Events>
+			<ChildItems>
+				<InputField name="ДеревоПодсистемПолноеИмя" id="27">
+					<DataPath>ДеревоПодсистем.ПолноеИмя</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДеревоПодсистемПолноеИмяКонтекстноеМеню" id="28"/>
+					<ExtendedTooltip name="ДеревоПодсистемПолноеИмяРасширеннаяПодсказка" id="29"/>
+				</InputField>
+				<InputField name="ДеревоПодсистемИмя" id="30">
+					<DataPath>ДеревоПодсистем.Имя</DataPath>
+					<Visible>false</Visible>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<ContextMenu name="ДеревоПодсистемИмяКонтекстноеМеню" id="31"/>
+					<ExtendedTooltip name="ДеревоПодсистемИмяРасширеннаяПодсказка" id="32"/>
+				</InputField>
+				<InputField name="ДеревоПодсистемПредставление" id="33">
+					<DataPath>ДеревоПодсистем.Представление</DataPath>
+					<ReadOnly>true</ReadOnly>
+					<EditMode>EnterOnInput</EditMode>
+					<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+					<TextEdit>false</TextEdit>
+					<ContextMenu name="ДеревоПодсистемПредставлениеКонтекстноеМеню" id="34"/>
+					<ExtendedTooltip name="ДеревоПодсистемПредставлениеРасширеннаяПодсказка" id="35"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ВыгрузкаСтруктурыМетаданныхВJSON</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДеревоПодсистем" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево подсистем</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПолноеИмя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полное имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>430</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Имя" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>255</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>255</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СтрокаПоиска" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строка поиска</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ОтменаВыполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена выполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтменаВыполнить</Action>
+		</Command>
+		<Command name="ВыбратьВыполнить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать выполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыбратьВыполнить</Action>
+		</Command>
+		<Command name="РазвернутьВсё" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть всё</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть всё</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РазвернутьВсё</Action>
+		</Command>
+		<Command name="СвернутьВсё" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть всё</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть всё</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СвернутьВсё</Action>
+		</Command>
+	</Commands>
+</Form>

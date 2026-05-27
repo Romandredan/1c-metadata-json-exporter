@@ -1,0 +1,48 @@
+# Секреты и локальное окружение
+.env
+.env.*
+!.env.example
+
+# Артефакты сборки/запуска
+build/
+out/
+dist/
+
+# Служебные файлы 1С/EDT
+ConfigDumpInfo.xml
+
+# Сборки 1С: бинарники не коммитим, кроме явно публикуемых релизов в releases/
+*.epf
+*.cf
+*.cfu
+*.cfe
+!releases/*.epf
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Логи
+*.log
+logs/
+
+# Кэш и временные
+*.bak
+*.tmp
+~$*
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Kiro: коммитим только steering и settings, локальные spec'и/состояние — игнорируем
+.kiro/*
+!.kiro/steering/
+!.kiro/settings/
+
+# Serena: коммитим только описание проекта, кэш и локальный конфиг — игнорируем
+.serena/*
+!.serena/.gitignore
+!.serena/project.yml

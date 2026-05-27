@@ -1,0 +1,859 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.20">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаВыбратьВыполнить" id="7">
+				<Type>CommandBarButton</Type>
+				<DefaultButton>true</DefaultButton>
+				<CommandName>Form.Command.ВыбратьВыполнить</CommandName>
+				<ExtendedTooltip name="ФормаВыбратьВыполнитьРасширеннаяПодсказка" id="8"/>
+			</Button>
+			<Button name="ФормаОтменаВыполнить" id="1">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ОтменаВыполнить</CommandName>
+				<ExtendedTooltip name="ФормаОтменаВыполнитьРасширеннаяПодсказка" id="2"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<Events>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+	</Events>
+	<ChildItems>
+		<CheckBoxField name="СкрыватьПомеченныеНаУдаление" id="87">
+			<DataPath>СкрыватьПомеченныеНаУдаление</DataPath>
+			<TitleLocation>Right</TitleLocation>
+			<CheckBoxType>Switcher</CheckBoxType>
+			<ContextMenu name="СкрыватьПомеченныеНаУдалениеКонтекстноеМеню" id="88"/>
+			<ExtendedTooltip name="СкрыватьПомеченныеНаУдалениеРасширеннаяПодсказка" id="89"/>
+			<Events>
+				<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+			</Events>
+		</CheckBoxField>
+		<UsualGroup name="ГруппаОсновное" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основное</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа основное</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>AlwaysHorizontal</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаОсновноеРасширеннаяПодсказка" id="12"/>
+			<ChildItems>
+				<UsualGroup name="ГруппаПраво" id="15">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа право</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа право</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаПравоРасширеннаяПодсказка" id="16"/>
+					<ChildItems>
+						<CheckBoxField name="РежимМножественный" id="84">
+							<DataPath>РежимМножественный</DataPath>
+							<Visible>false</Visible>
+							<TitleLocation>Right</TitleLocation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="РежимМножественныйКонтекстноеМеню" id="85"/>
+							<ExtendedTooltip name="РежимМножественныйРасширеннаяПодсказка" id="86"/>
+						</CheckBoxField>
+						<UsualGroup name="ФильтрыМетаданных" id="96">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Фильтры по метаданным</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Фильтры метаданных</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ФильтрыМетаданныхРасширеннаяПодсказка" id="97"/>
+							<ChildItems>
+								<CheckBoxField name="ПоказыватьДокументы" id="48">
+									<DataPath>ПоказыватьДокументы</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Документы</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьДокументыКонтекстноеМеню" id="49"/>
+									<ExtendedTooltip name="ПоказыватьДокументыРасширеннаяПодсказка" id="50"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьСправочники" id="81">
+									<DataPath>ПоказыватьСправочники</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Справочники</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьСправочникиКонтекстноеМеню" id="82"/>
+									<ExtendedTooltip name="ПоказыватьСправочникиРасширеннаяПодсказка" id="83"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьРегистрыСведений" id="78">
+									<DataPath>ПоказыватьРегистрыСведений</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Регистры сведений</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьРегистрыСведенийКонтекстноеМеню" id="79"/>
+									<ExtendedTooltip name="ПоказыватьРегистрыСведенийРасширеннаяПодсказка" id="80"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьРегистрыНакопления" id="72">
+									<DataPath>ПоказыватьРегистрыНакопления</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Регистры накопления</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьРегистрыНакопленияКонтекстноеМеню" id="73"/>
+									<ExtendedTooltip name="ПоказыватьРегистрыНакопленияРасширеннаяПодсказка" id="74"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьПланыСчетов" id="66">
+									<DataPath>ПоказыватьПланыСчетов</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Планы счетов</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьПланыСчетовКонтекстноеМеню" id="67"/>
+									<ExtendedTooltip name="ПоказыватьПланыСчетовРасширеннаяПодсказка" id="68"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьРегистрыБухгалтерии" id="69">
+									<DataPath>ПоказыватьРегистрыБухгалтерии</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Регистры бухгалтерии</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьРегистрыБухгалтерииКонтекстноеМеню" id="70"/>
+									<ExtendedTooltip name="ПоказыватьРегистрыБухгалтерииРасширеннаяПодсказка" id="71"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьРегистрыРасчета" id="75">
+									<DataPath>ПоказыватьРегистрыРасчета</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Регистры расчетов</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьРегистрыРасчетаКонтекстноеМеню" id="76"/>
+									<ExtendedTooltip name="ПоказыватьРегистрыРасчетаРасширеннаяПодсказка" id="77"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьПланыВидовХарактеристик" id="60">
+									<DataPath>ПоказыватьПланыВидовХарактеристик</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Планы видов характеристик</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьПланыВидовХарактеристикКонтекстноеМеню" id="61"/>
+									<ExtendedTooltip name="ПоказыватьПланыВидовХарактеристикРасширеннаяПодсказка" id="62"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьПланыВидовРасчета" id="57">
+									<DataPath>ПоказыватьПланыВидовРасчета</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Планы видов расчета</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьПланыВидовРасчетаКонтекстноеМеню" id="58"/>
+									<ExtendedTooltip name="ПоказыватьПланыВидовРасчетаРасширеннаяПодсказка" id="59"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьПланыОбмена" id="63">
+									<DataPath>ПоказыватьПланыОбмена</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Планы обмена</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьПланыОбменаКонтекстноеМеню" id="64"/>
+									<ExtendedTooltip name="ПоказыватьПланыОбменаРасширеннаяПодсказка" id="65"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьПеречисления" id="54">
+									<DataPath>ПоказыватьПеречисления</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Перечисления</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьПеречисленияКонтекстноеМеню" id="55"/>
+									<ExtendedTooltip name="ПоказыватьПеречисленияРасширеннаяПодсказка" id="56"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьБизнесПроцессы" id="93">
+									<DataPath>ПоказыватьБизнесПроцессы</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Бизнес-процессы</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьБизнесПроцессыКонтекстноеМеню" id="94"/>
+									<ExtendedTooltip name="ПоказыватьБизнесПроцессыРасширеннаяПодсказка" id="95"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьЗадачи" id="51">
+									<DataPath>ПоказыватьЗадачи</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Задачи</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьЗадачиКонтекстноеМеню" id="52"/>
+									<ExtendedTooltip name="ПоказыватьЗадачиРасширеннаяПодсказка" id="53"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="ГруппаЛево" id="13">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа лево</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа лево</v8:content>
+						</v8:item>
+					</ToolTip>
+					<Representation>None</Representation>
+					<ShowTitle>false</ShowTitle>
+					<ExtendedTooltip name="ГруппаЛевоРасширеннаяПодсказка" id="14"/>
+					<ChildItems>
+						<InputField name="СтрокаПоиска" id="90">
+							<DataPath>СтрокаПоиска</DataPath>
+							<Visible>false</Visible>
+							<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+							<ContextMenu name="СтрокаПоискаКонтекстноеМеню" id="91"/>
+							<ExtendedTooltip name="СтрокаПоискаРасширеннаяПодсказка" id="92"/>
+							<Events>
+								<Event name="OnChange">СтрокаПоискаПриИзменении</Event>
+							</Events>
+						</InputField>
+						<Table name="ДеревоМетаданных" id="17">
+							<Representation>Tree</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<SearchOnInput>Use</SearchOnInput>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ДеревоМетаданных</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Change</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>CommandBar</SearchStringLocation>
+							<ContextMenu name="ДеревоМетаданныхКонтекстноеМеню" id="18"/>
+							<AutoCommandBar name="ДеревоМетаданныхКоманднаяПанель" id="19">
+								<ChildItems>
+									<ButtonGroup name="ФормаГруппа1" id="9">
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="ФормаГруппа1РасширеннаяПодсказка" id="10"/>
+										<ChildItems>
+											<Button name="ФормаОтметитьВсеВГруппе" id="3">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОтметитьВсеВГруппе</CommandName>
+												<Picture>
+													<xr:Ref>StdPicture.CheckAll</xr:Ref>
+													<xr:LoadTransparent>true</xr:LoadTransparent>
+												</Picture>
+												<ExtendedTooltip name="ФормаОтметитьВсеВГруппеРасширеннаяПодсказка" id="4"/>
+											</Button>
+											<Button name="ФормаСнятьВсеОтметки" id="5">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СнятьВсеОтметки</CommandName>
+												<Picture>
+													<xr:Ref>StdPicture.UncheckAll</xr:Ref>
+													<xr:LoadTransparent>true</xr:LoadTransparent>
+												</Picture>
+												<ExtendedTooltip name="ФормаСнятьВсеОтметкиРасширеннаяПодсказка" id="6"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+									<ButtonGroup name="ДеревоМетаданныхГруппа2" id="100">
+										<Representation>Compact</Representation>
+										<ExtendedTooltip name="ДеревоМетаданныхГруппа2РасширеннаяПодсказка" id="101"/>
+										<ChildItems>
+											<Button name="ДеревоМетаданныхРазвернутьВсё" id="102">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.РазвернутьВсё</CommandName>
+												<Picture>
+													<xr:Ref>StdPicture.ExpandAll</xr:Ref>
+													<xr:LoadTransparent>true</xr:LoadTransparent>
+												</Picture>
+												<ExtendedTooltip name="ДеревоМетаданныхРазвернутьВсёРасширеннаяПодсказка" id="103"/>
+											</Button>
+											<Button name="ДеревоМетаданныхСвернутьВсё" id="104">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.СвернутьВсё</CommandName>
+												<Picture>
+													<xr:Ref>StdPicture.CollapseAll</xr:Ref>
+													<xr:LoadTransparent>true</xr:LoadTransparent>
+												</Picture>
+												<ExtendedTooltip name="ДеревоМетаданныхСвернутьВсёРасширеннаяПодсказка" id="105"/>
+											</Button>
+										</ChildItems>
+									</ButtonGroup>
+								</ChildItems>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ДеревоМетаданныхРасширеннаяПодсказка" id="20"/>
+							<SearchStringAddition name="ДеревоМетаданныхСтрокаПоиска" id="21">
+								<AdditionSource>
+									<Item>ДеревоМетаданных</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоМетаданныхСтрокаПоискаКонтекстноеМеню" id="22"/>
+								<ExtendedTooltip name="ДеревоМетаданныхСтрокаПоискаРасширеннаяПодсказка" id="23"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДеревоМетаданныхСостояниеПросмотра" id="24">
+								<AdditionSource>
+									<Item>ДеревоМетаданных</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоМетаданныхСостояниеПросмотраКонтекстноеМеню" id="25"/>
+								<ExtendedTooltip name="ДеревоМетаданныхСостояниеПросмотраРасширеннаяПодсказка" id="26"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДеревоМетаданныхУправлениеПоиском" id="27">
+								<AdditionSource>
+									<Item>ДеревоМетаданных</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоМетаданныхУправлениеПоискомКонтекстноеМеню" id="28"/>
+								<ExtendedTooltip name="ДеревоМетаданныхУправлениеПоискомРасширеннаяПодсказка" id="29"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="Selection">ДеревоМетаданныхВыбор</Event>
+							</Events>
+							<ChildItems>
+								<CheckBoxField name="ДеревоМетаданныхВыбран" id="42">
+									<DataPath>ДеревоМетаданных.Выбран</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДеревоМетаданныхВыбранКонтекстноеМеню" id="43"/>
+									<ExtendedTooltip name="ДеревоМетаданныхВыбранРасширеннаяПодсказка" id="44"/>
+									<Events>
+										<Event name="OnChange">ВыбранПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<CheckBoxField name="ДеревоМетаданныхЭтоГруппа" id="39">
+									<DataPath>ДеревоМетаданных.ЭтоГруппа</DataPath>
+									<Enabled>false</Enabled>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДеревоМетаданныхЭтоГруппаКонтекстноеМеню" id="40"/>
+									<ExtendedTooltip name="ДеревоМетаданныхЭтоГруппаРасширеннаяПодсказка" id="41"/>
+								</CheckBoxField>
+								<ColumnGroup name="ДеревоМетаданныхГруппа1" id="98">
+									<ExtendedTooltip name="ДеревоМетаданныхГруппа1РасширеннаяПодсказка" id="99"/>
+									<ChildItems>
+										<InputField name="ДеревоМетаданныхИмя" id="33">
+											<DataPath>ДеревоМетаданных.Имя</DataPath>
+											<Visible>false</Visible>
+											<EditMode>EnterOnInput</EditMode>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ДеревоМетаданныхИмяКонтекстноеМеню" id="34"/>
+											<ExtendedTooltip name="ДеревоМетаданныхИмяРасширеннаяПодсказка" id="35"/>
+										</InputField>
+										<InputField name="ДеревоМетаданныхПредставление" id="36">
+											<DataPath>ДеревоМетаданных.Представление</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<EditMode>EnterOnInput</EditMode>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<TextEdit>false</TextEdit>
+											<ContextMenu name="ДеревоМетаданныхПредставлениеКонтекстноеМеню" id="37"/>
+											<ExtendedTooltip name="ДеревоМетаданныхПредставлениеРасширеннаяПодсказка" id="38"/>
+										</InputField>
+										<InputField name="ДеревоМетаданныхПолноеИмя" id="30">
+											<DataPath>ДеревоМетаданных.ПолноеИмя</DataPath>
+											<Visible>false</Visible>
+											<EditMode>EnterOnInput</EditMode>
+											<ExtendedEditMultipleValues>true</ExtendedEditMultipleValues>
+											<ContextMenu name="ДеревоМетаданныхПолноеИмяКонтекстноеМеню" id="31"/>
+											<ExtendedTooltip name="ДеревоМетаданныхПолноеИмяРасширеннаяПодсказка" id="32"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+								<CheckBoxField name="ДеревоМетаданныхПомечен" id="45">
+									<DataPath>ДеревоМетаданных.Помечен</DataPath>
+									<Enabled>false</Enabled>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДеревоМетаданныхПомеченКонтекстноеМеню" id="46"/>
+									<ExtendedTooltip name="ДеревоМетаданныхПомеченРасширеннаяПодсказка" id="47"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ВыгрузкаСтруктурыМетаданныхВJSON</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ДеревоМетаданных" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дерево метаданных</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTree</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ПолноеИмя" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Полное имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>430</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Имя" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>255</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Представление" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Представление</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>255</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЭтоГруппа" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Это группа</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Выбран" id="5">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выбран</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Помечен" id="6">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Помечен</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="СтрокаПоиска" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Строка поиска</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>100</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="РежимМножественный" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Режим множественный</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="СкрыватьПомеченныеНаУдаление" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Скрывать помеченные на удаление</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьСправочники" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать справочники</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьДокументы" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать документы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьПеречисления" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать перечисления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьПланыВидовХарактеристик" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать планы видов характеристик</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьПланыСчетов" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать планы счетов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьПланыВидовРасчета" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать планы видов расчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьРегистрыСведений" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать регистры сведений</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьРегистрыНакопления" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать регистры накопления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьРегистрыБухгалтерии" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать регистры бухгалтерии</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьРегистрыРасчета" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать регистры расчета</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьПланыОбмена" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать планы обмена</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьБизнесПроцессы" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать бизнес процессы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьЗадачи" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать задачи</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ВыбратьВыполнить" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выбрать выполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыбратьВыполнить</Action>
+		</Command>
+		<Command name="ОтметитьВсеВГруппе" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отметить все в группе</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтметитьВсеВГруппе</Action>
+		</Command>
+		<Command name="СнятьВсеОтметки" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Снять все отметки</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СнятьВсеОтметки</Action>
+		</Command>
+		<Command name="ОтменаВыполнить" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отмена выполнить</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОтменаВыполнить</Action>
+		</Command>
+		<Command name="РазвернутьВсё" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть всё</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Развернуть всё</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>РазвернутьВсё</Action>
+		</Command>
+		<Command name="СвернутьВсё" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть всё</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Свернуть всё</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СвернутьВсё</Action>
+		</Command>
+	</Commands>
+</Form>
