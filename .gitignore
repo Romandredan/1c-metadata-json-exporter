@@ -37,10 +37,12 @@ logs/
 .vscode/
 *.iml
 
-# Kiro: коммитим только steering и settings, локальные spec'и/состояние — игнорируем
+# Kiro: в репо только описание проекта (project.md).
+# Личная обвязка агента (MCP-настройки, steering под конкретные инструменты) — локальная, не коммитим.
 .kiro/*
 !.kiro/steering/
-!.kiro/settings/
+.kiro/steering/*
+!.kiro/steering/project.md
 
 # Serena: коммитим только описание проекта, кэш и локальный конфиг — игнорируем
 .serena/*
