@@ -263,6 +263,22 @@
 										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
 									</Events>
 								</CheckBoxField>
+								<CheckBoxField name="ПоказыватьКонстанты" id="106">
+									<DataPath>ПоказыватьКонстанты</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Константы</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>Left</TitleLocation>
+									<CheckBoxType>Switcher</CheckBoxType>
+									<ContextMenu name="ПоказыватьКонстантыКонтекстноеМеню" id="107"/>
+									<ExtendedTooltip name="ПоказыватьКонстантыРасширеннаяПодсказка" id="108"/>
+									<Events>
+										<Event name="OnChange">ФильтрКоллекцийПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
 								<CheckBoxField name="ПоказыватьБизнесПроцессы" id="93">
 									<DataPath>ПоказыватьБизнесПроцессы</DataPath>
 									<Title>
@@ -647,6 +663,17 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показывать перечисления</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ПоказыватьКонстанты" id="109">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Показывать константы</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
